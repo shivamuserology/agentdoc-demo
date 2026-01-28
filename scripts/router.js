@@ -40,6 +40,11 @@ const Router = {
         // Update breadcrumb
         this.updateBreadcrumb(path);
 
+        // Update sidebar visibility
+        if (typeof App !== 'undefined' && App.updateSidebarVisibility) {
+            App.updateSidebarVisibility(path);
+        }
+
         // Call route handler
         if (this.routes[path]) {
             this.routes[path](queryParams);

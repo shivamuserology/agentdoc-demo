@@ -243,6 +243,19 @@ const App = {
             'Document Rejected': 'var(--error-500)'
         };
         return colorMap[action] || 'var(--primary-500)';
+    },
+
+    // Update sidebar visibility based on current route
+    updateSidebarVisibility(route) {
+        const useCasesSection = document.getElementById('sidebarUseCases');
+        if (!useCasesSection) return;
+
+        // Hide Use Cases section when in Configuration Studio
+        if (route === 'configuration') {
+            useCasesSection.style.display = 'none';
+        } else {
+            useCasesSection.style.display = 'block';
+        }
     }
 };
 
