@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DocuAgent - AI-powered Agentic Document Processing Engine for intelligent document ingestion, classification, extraction, and workflow automation">
+    <title>DocuAgent - Agentic Document Processing Engine</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/documents.css">
+    <link rel="stylesheet" href="styles/configuration.css">
+</head>
+
+<body>
+    <div class="app" id="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="sidebar-logo-icon">
+                        <i data-feather="cpu" width="20" height="20"></i>
+                    </div>
+                    <span class="sidebar-logo-text">DocuAgent</span>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Main Navigation -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Main</div>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-nav-item active" data-route="dashboard">
+                            <i data-feather="home" class="sidebar-nav-item-icon"></i>
+                            Home
+                        </button>
+                        <button class="sidebar-nav-item" data-route="processing">
+                            <i data-feather="play-circle" class="sidebar-nav-item-icon"></i>
+                            Process Documents
+                        </button>
+                        <button class="sidebar-nav-item" data-route="configuration">
+                            <i data-feather="settings" class="sidebar-nav-item-icon"></i>
+                            Configuration Studio
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Use Cases -->
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Use Cases</div>
+                    <div class="use-case-switcher">
+                        <div class="use-case-card active" data-usecase="procurement">
+                            <div class="use-case-card-header">
+                                <span class="use-case-card-icon">🏭</span>
+                                <span class="use-case-card-title">Procurement</span>
+                            </div>
+                            <div class="use-case-card-subtitle">3-Way Match</div>
+                        </div>
+                        <div class="use-case-card" data-usecase="claims">
+                            <div class="use-case-card-header">
+                                <span class="use-case-card-icon">🏥</span>
+                                <span class="use-case-card-title">Claims Processing</span>
+                            </div>
+                            <div class="use-case-card-subtitle">Healthcare Claims</div>
+                        </div>
+                        <button class="create-usecase-btn" id="openConfigStudio">
+                            <i data-feather="plus" width="16" height="16"></i>
+                            Create Custom
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="avatar avatar-sm">JS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">John Smith</div>
+                        <div class="sidebar-user-role">Admin</div>
+                    </div>
+                    <i data-feather="chevron-down" width="16" height="16" style="color: var(--text-tertiary)"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn btn-icon btn-ghost" id="menuToggle" style="display: none;">
+                        <i data-feather="menu" width="20" height="20"></i>
+                    </button>
+                    <div class="topbar-breadcrumb">
+                        <a href="#dashboard">Home</a>
+                        <span class="topbar-breadcrumb-separator">/</span>
+                        <span class="topbar-breadcrumb-current" id="currentPage">Dashboard</span>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-search">
+                        <i data-feather="search" class="topbar-search-icon"></i>
+                        <input type="text" class="topbar-search-input" placeholder="Search documents...">
+                    </div>
+                    <button class="topbar-icon-btn tooltip">
+                        <i data-feather="bell" width="20" height="20"></i>
+                        <span class="notification-dot"></span>
+                        <span class="tooltip-content">Notifications</span>
+                    </button>
+                    <button class="topbar-icon-btn tooltip">
+                        <i data-feather="help-circle" width="20" height="20"></i>
+                        <span class="tooltip-content">Help</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Content Container -->
+            <div class="page-content" id="pageContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal modal-lg" id="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Modal Title</h3>
+                <button class="modal-close" id="modalClose">
+                    <i data-feather="x" width="20" height="20"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic modal content -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn btn-primary" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/mockData.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/components/dashboard.js"></script>
+    <script src="scripts/components/processing.js"></script>
+    <script src="scripts/components/configuration.js"></script>
+    <script src="scripts/router.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

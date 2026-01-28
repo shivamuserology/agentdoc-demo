@@ -1,0 +1,496 @@
+/* ============================================
+   DOCUAGENT - Configuration Styles
+   ============================================ */
+
+/* Configuration Studio Layout */
+.config-studio {
+    display: flex;
+    gap: var(--space-6);
+    min-height: calc(100vh - var(--topbar-height) - var(--space-16));
+}
+
+.config-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.config-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Step Navigation */
+.config-steps {
+    background-color: var(--surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+    padding: var(--space-4);
+}
+
+.config-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: var(--space-1);
+}
+
+.config-step:last-child {
+    margin-bottom: 0;
+}
+
+.config-step:hover {
+    background-color: var(--gray-50);
+}
+
+.config-step.active {
+    background-color: var(--primary-50);
+}
+
+.config-step.completed {
+    opacity: 0.8;
+}
+
+.config-step-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    background-color: var(--gray-200);
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.config-step.active .config-step-number {
+    background-color: var(--primary-500);
+    color: var(--text-inverse);
+}
+
+.config-step.completed .config-step-number {
+    background-color: var(--success-500);
+    color: var(--text-inverse);
+}
+
+.config-step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.config-step-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+.config-step.active .config-step-title {
+    color: var(--primary-700);
+}
+
+.config-step-subtitle {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+/* Config Panel */
+.config-panel {
+    background-color: var(--surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-default);
+}
+
+.config-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.config-panel-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+}
+
+.config-panel-subtitle {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-top: var(--space-1);
+}
+
+.config-panel-body {
+    padding: var(--space-5);
+}
+
+.config-panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-5);
+    border-top: 1px solid var(--border-default);
+    background-color: var(--gray-50);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Schema Builder */
+.schema-field-list {
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.schema-field-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-default);
+    transition: background-color var(--transition-fast);
+}
+
+.schema-field-item:last-child {
+    border-bottom: none;
+}
+
+.schema-field-item:hover {
+    background-color: var(--gray-50);
+}
+
+.schema-field-drag {
+    cursor: grab;
+    color: var(--text-tertiary);
+}
+
+.schema-field-drag:active {
+    cursor: grabbing;
+}
+
+.schema-field-name {
+    flex: 1;
+    font-weight: var(--font-medium);
+}
+
+.schema-field-type {
+    width: 100px;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.schema-field-badges {
+    display: flex;
+    gap: var(--space-1);
+}
+
+.schema-field-actions {
+    display: flex;
+    gap: var(--space-1);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.schema-field-item:hover .schema-field-actions {
+    opacity: 1;
+}
+
+/* Training Center */
+.training-area {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-4);
+    min-height: 400px;
+}
+
+.training-document {
+    background-color: var(--gray-100);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.training-annotation {
+    position: absolute;
+    border: 2px solid var(--primary-500);
+    background-color: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.training-annotation:hover {
+    background-color: rgba(99, 102, 241, 0.2);
+}
+
+.training-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.training-field-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--gray-50);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+}
+
+.training-field-status {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+}
+
+.training-field-status.complete {
+    background-color: var(--success-100);
+    color: var(--success-700);
+}
+
+.training-field-status.partial {
+    background-color: var(--warning-100);
+    color: var(--warning-700);
+}
+
+.training-field-status.empty {
+    background-color: var(--gray-200);
+    color: var(--text-tertiary);
+}
+
+/* Rules Builder */
+.rule-card {
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-bottom: var(--space-3);
+    transition: all var(--transition-fast);
+}
+
+.rule-card:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.rule-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.rule-card-title {
+    font-weight: var(--font-semibold);
+}
+
+.rule-condition {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--gray-50);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+}
+
+.rule-condition-keyword {
+    font-weight: var(--font-semibold);
+    color: var(--primary-600);
+}
+
+.rule-action {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--primary-50);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+}
+
+/* Workflow Designer */
+.workflow-canvas {
+    background-color: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    min-height: 300px;
+}
+
+.workflow-stages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.workflow-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--surface);
+    border: 2px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    min-width: 100px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.workflow-stage:hover {
+    border-color: var(--primary-300);
+    box-shadow: var(--shadow-sm);
+}
+
+.workflow-stage.selected {
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.workflow-stage-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background-color: var(--primary-50);
+    color: var(--primary-600);
+}
+
+.workflow-stage-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+}
+
+.workflow-connector {
+    width: 40px;
+    height: 2px;
+    background-color: var(--border-strong);
+    position: relative;
+}
+
+.workflow-connector::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -3px;
+    border: 4px solid transparent;
+    border-left-color: var(--border-strong);
+}
+
+/* Integration Cards */
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-3);
+}
+
+.integration-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background-color: var(--gray-50);
+    border: 2px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.integration-card:hover {
+    border-color: var(--primary-300);
+    background-color: var(--primary-50);
+}
+
+.integration-card.configured {
+    border-color: var(--success-500);
+    background-color: var(--success-50);
+}
+
+.integration-card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    color: var(--text-secondary);
+}
+
+.integration-card.configured .integration-card-icon {
+    color: var(--success-600);
+}
+
+.integration-card-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+.integration-card-status {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+}
+
+.integration-card.configured .integration-card-status {
+    color: var(--success-600);
+}
+
+/* Templates Grid */
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+}
+
+.template-card {
+    padding: var(--space-5);
+    border: 2px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.template-card:hover {
+    border-color: var(--primary-300);
+    background-color: var(--primary-50);
+}
+
+.template-card.selected {
+    border-color: var(--primary-500);
+    background-color: var(--primary-50);
+}
+
+.template-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-3);
+}
+
+.template-card-title {
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+}
+
+.template-card-description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
