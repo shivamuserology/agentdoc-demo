@@ -15,7 +15,7 @@ const DashboardComponent = {
     container.innerHTML = `
       <div class="page-header">
         <div class="page-header-content">
-          <h1 class="page-title">Welcome to DocuAgent</h1>
+          <h1 class="page-title">Welcome to AgentDoc</h1>
           <p class="page-subtitle">AI-Powered Document Processing Engine</p>
         </div>
       </div>

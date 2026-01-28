@@ -12,7 +12,7 @@ const App = {
 
     // Initialize the application
     init() {
-        console.log('🚀 DocuAgent initializing...');
+        console.log('🚀 AgentDoc initializing...');
 
         // Register routes
         this.registerRoutes();
@@ -26,7 +26,7 @@ const App = {
         // Initialize feather icons
         feather.replace({ 'stroke-width': 2 });
 
-        console.log('✅ DocuAgent ready!');
+        console.log('✅ AgentDoc ready!');
     },
 
     // Register all routes
